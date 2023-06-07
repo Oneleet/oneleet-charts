@@ -1,0 +1,79 @@
+
+image:
+  repository: "ghcr.io/tailscale/tailscale"
+  tag: "latest"
+  pullPolicy: "IfNotPresent"
+
+# required destination ip range
+destIP: ""
+
+secret:
+  authKey: ""
+  name: "tailscale-auth"
+
+deployment:
+  annotations: {}
+  labels: {}
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  # If set and create is false, the service account must be existing
+  name:
+  annotations: {}
+
+resources:
+  limits:
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 512Mi
+
+priorityClassName: ""
+
+# Affinity for pod assignment
+# Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
+# affinity: {}
+
+# Tolerations for pod assignment
+# Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+tolerations: []
+
+# Node labels for pod assignment
+# Ref: https://kubernetes.io/docs/user-guide/node-selection/
+nodeSelector: {}
+
+# Common annotations for the proxy pod
+podAnnotations: {}
+
+# Increasing replica count will deploy a separate pod for backend and jobs
+# Example: with 3 replicas, you will end up with 3 backends + 1 jobs pod
+revisionHistoryLimit: 3
+
+# default security context
+securityContext:
+  enabled: true
+  allowPrivilegeEscalation: false
+  runAsUser: 1000
+  fsGroup: 2000
+
+# default pod security context
+podSecurityContext:
+  enabled: true
+  capabilities:
+    add:
+    - NET_ADMIN
+
+extraConfigMapMounts: []
+
+initContainers: []
+
+extraManifests: []
+
+# Support for AWS Security groups for pods
+# Ref: https://docs.aws.amazon.com/eks/latest/userguide/security-groups-for-pods.html
+securityGroupPolicy:
+  enabled: false
+  groupIds: []

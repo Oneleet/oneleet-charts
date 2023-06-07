@@ -1,0 +1,8 @@
+apiVersion: v2
+name: tailscale-proxy
+description: A Helm chart for deploying a Tailscale proxy on Kubernetes.
+type: application
+version: 0.1.0
+maintainers:
+  - name: Alexander Belanger
+    email: alexander@oneleet.com
