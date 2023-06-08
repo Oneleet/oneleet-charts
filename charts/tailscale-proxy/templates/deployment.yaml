@@ -71,6 +71,8 @@ spec:
           value: "{{ required "Please set .Values.destIP" .Values.destIP }}"
         - name: TS_AUTH_ONCE
           value: "true"
+        - name: TS_HOSTNAME
+          value: "{{ .Values.hostname }}"
         resources:
 {{ toYaml .Values.resources | indent 10 }}
 {{- if .Values.podSecurityContext.enabled }}
