@@ -2,6 +2,18 @@ apiVersion: v1
 entries:
   tailscale-proxy:
   - apiVersion: v2
+    created: "2023-06-08T19:27:37.277828123Z"
+    description: A Helm chart for deploying a Tailscale proxy on Kubernetes.
+    digest: 8e76bec9f00801821445e6098d621044f22c57f7188b676b49e5dc31108ccdbc
+    maintainers:
+    - email: alexander@oneleet.com
+      name: Alexander Belanger
+    name: tailscale-proxy
+    type: application
+    urls:
+    - https://github.com/Oneleet/oneleet-charts/releases/download/tailscale-proxy-0.2.0/tailscale-proxy-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2023-06-07T16:10:26.985141742Z"
     description: A Helm chart for deploying a Tailscale proxy on Kubernetes.
     digest: 7283d217d9130f8681d99b0b3d21a7e5887278c5d8350d844b26af09de5c2d31
@@ -13,4 +25,4 @@ entries:
     urls:
     - https://github.com/Oneleet/oneleet-charts/releases/download/tailscale-proxy-0.1.0/tailscale-proxy-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-07T16:10:26.985150842Z"
+generated: "2023-06-08T19:27:37.277840824Z"
